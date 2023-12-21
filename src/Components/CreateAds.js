@@ -31,8 +31,8 @@ const CreateAds = () => {
                 <p> <span className="fw-bold">Note :</span>  click the checkbox ( TextAD or MediaAd) and go to respective inputs</p>
                 <Row className=" offset-lg-3 py-3">
 
-                    <Col xs={6} lg={4}>
-                        <Card>
+                    <Col xs={6} lg={4} >
+                        <Card className="h-100">
                             <input type="checkbox" data-toggle="toggle" className="my-2 checkbox" onChange={onchagehandlerText}></input>
                             <CardImg src="https://media.istockphoto.com/id/1204778488/vector/chat-interface-application-with-dialogue-window-clean-mobile-ui-design-concept-sms-messenger.jpg?s=612x612&w=0&k=20&c=LaCe1SmcMPqHV2FXDKukpCqpWRZvaFKp9VY0U9aBH5E=" width="10px"></CardImg>
                             <CardBody style={{ backgroundColor: "lightgray" }}>
@@ -44,9 +44,9 @@ const CreateAds = () => {
                     </Col>
 
                     <Col xs={6} lg={4}>
-                        <Card >
+                        <Card className="h-100">
                             <input type="checkbox" className="my-2 checkbox" onChange={onchagehandlerMedia}></input>
-                            <CardImg src="https://media.istockphoto.com/id/1204778488/vector/chat-interface-application-with-dialogue-window-clean-mobile-ui-design-concept-sms-messenger.jpg?s=612x612&w=0&k=20&c=LaCe1SmcMPqHV2FXDKukpCqpWRZvaFKp9VY0U9aBH5E="></CardImg>
+                            <CardImg src="https://miro.medium.com/v2/resize:fit:1400/0*-a3DOpKOtU2bsUFB.png"></CardImg>
                             <CardBody style={{ backgroundColor: "lightgray" }}>
                                 <CardTitle >
                                     <h4 className="fw-bold">Media Ad</h4 >

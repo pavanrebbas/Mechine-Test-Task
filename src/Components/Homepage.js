@@ -126,10 +126,10 @@ const Homepage = () => {
     return (
 
         <Fragment>
-            <Container className="my-4 py-5">
+            <Container className="my-5">
                 <Row>
                     <Col>
-                        <Table className="border">
+                        <Table striped bordered>
                             <thead>
                                 <tr>
                                     <td>Ad insights</td>
@@ -150,7 +150,7 @@ const Homepage = () => {
                                             <tr>
                                                 <td>{products.Campaigns}</td>
                                                 <td>{products.clicks}</td>
-                                                <td>USD - {products.Cost}</td>
+                                                <td>usd - {products.Cost}</td>
                                                 <td>{products.Conversions}</td>
                                                 <td>{products.Revenue}</td>
                                             </tr>
@@ -165,17 +165,15 @@ const Homepage = () => {
 
                     <Col className="border">
                         <p>Ad insights</p>
-                        <hr/>
                         {
                             toggle ? <DataTable /> : <Doughtnutchart />
                         }
+
                         <div className="float-end">
                             <Switch onClick={handleclick} />
                         </div>
 
                     </Col>
-
-
                 </Row>
             </Container>
 

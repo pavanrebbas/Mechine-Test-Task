@@ -51,7 +51,7 @@ const Doughtnutchart = () => {
 
         <Fragment>
 
-            <div style={{ width: "100%", height: "290px" }}>
+            <div  style={{ width: "100%", height: "70%" }}>
                 <canvas ref={chartRef} />
 
 
