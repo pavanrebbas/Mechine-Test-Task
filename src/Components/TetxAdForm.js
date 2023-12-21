@@ -21,7 +21,7 @@ const TextAdForm = () => {
         e.preventDefault();
         setTimeout(() => {
             navigate("/create")
-        }, 600);
+        }, 6000);
     }
 
 
