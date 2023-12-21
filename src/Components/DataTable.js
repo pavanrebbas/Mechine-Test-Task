@@ -33,7 +33,7 @@ const DataTable = () => {
             Clicks: 105,
             Cost: 3943,
             Conversions: 3,
-            Revenue: 44989
+            Revenue: 4489
         },
         {
 
@@ -54,11 +54,8 @@ const DataTable = () => {
     return (
 
         <Fragment>
-            <Table striped bordered>
+            <Table>
                 <thead>
-                    <tr>
-                        <td>Ad insights</td>
-                    </tr>
                     <tr>
                         <th> Group</th>
                         <th> Clicks</th>
@@ -78,7 +75,7 @@ const DataTable = () => {
                                     <td>{d.Clicks}</td>
                                     <td>USD- {d.Cost}</td>
                                     <td>{d.Conversions}</td>
-                                    <td>{d.Revenue}</td>
+                                    <td>USD-  {d.Revenue}</td>
                                 </tr>
                             )
                         })

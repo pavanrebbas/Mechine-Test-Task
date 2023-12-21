@@ -1,5 +1,5 @@
 import { Fragment, useState } from "react"
-import { Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table, Card } from "react-bootstrap";
 import Doughtnutchart from "./Doughnutchart";
 import DataTable from "./DataTable";
 import { Switch } from "antd";
@@ -123,17 +123,17 @@ const Homepage = () => {
 
 
 
-
-
-
     return (
 
         <Fragment>
             <Container className="my-4 py-5">
                 <Row>
                     <Col>
-                        <Table striped bordered>
+                        <Table className="border">
                             <thead>
+                                <tr>
+                                    <td>Ad insights</td>
+                                </tr>
                                 <tr>
                                     <th onClick={() => sorting("Campaigns")}>Campaigns</th>
                                     <th onClick={() => sorting("clicks")}>clicks</th>
@@ -162,15 +162,20 @@ const Homepage = () => {
                         </Table>
                     </Col>
 
-                    <Col>
 
+                    <Col className="border">
+                        <p>Ad insights</p>
+                        <hr/>
                         {
                             toggle ? <DataTable /> : <Doughtnutchart />
                         }
                         <div className="float-end">
-                            <Switch onClick={handleclick}  />
+                            <Switch onClick={handleclick} />
                         </div>
+
                     </Col>
+
+
                 </Row>
             </Container>
 

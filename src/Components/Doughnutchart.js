@@ -1,79 +1,64 @@
-import { Fragment } from "react";
-import { useState } from "react";
-import { Table } from "react-bootstrap";
+import { Fragment, useEffect, useRef } from "react";
+import Chart from "chart.js/auto";
 
 const Doughtnutchart = () => {
 
-    const Data = [
 
-        {
+    //////DOUGHTNUT CHART/////
+    const chartRef = useRef(null);
+    const chartInstance = useRef(null);
 
-            Group: "male",
-            Clicks: 348,
-            Cost: 12528,
-            Conversions: 42,
-            Revenue: 62118
-        },
-        {
-
-            Group: "male",
-            Clicks: 348,
-            Cost: 12528,
-            Conversions: 42,
-            Revenue: 62118
-        },
-        {
-
-            Group: "male",
-            Clicks: 348,
-            Cost: 12528,
-            Conversions: 42,
-            Revenue: 62118
-        },
-        {
-
-            Group: "male",
-            Clicks: 348,
-            Cost: 12528,
-            Conversions: 42,
-            Revenue: 62118
+    useEffect(() => {
+        if (chartInstance.current) {
+            chartInstance.current.destroy();
         }
+        const myChartRef = chartRef.current.getContext("2d")
 
-    ];
-    const [data, setdata] = useState(Data)
+        chartInstance.current = new Chart(myChartRef, {
+            type: 'doughnut',
+            data: {
+                datasets: [
+                    {
+                        data: [40, 35, 25],
+                        backgroundColor: [
+                            'rgb(255,140,0)',
+                            'rgb(135, 206, 235)',
+                            'rgb((255,255,255))'
+                        ],
+                    }
+                ],
+                labels: [
+                    '40% Male ',
+                    '35% Female',
+                    '25% Unknown'
+                ],
+
+            },
+
+
+
+        });
+
+        return () => {
+            if (chartInstance.current) {
+                chartInstance.current.destroy();
+            }
+        }
+    }, [])
+
+
     return (
 
         <Fragment>
-            <h1>Doughtnutchart</h1>
 
-            <Table striped bordered>
-                <thead>
-                    <tr>
-                        <th> Group</th>
-                        <th> Clicks</th>
-                        <th> Cost</th>
-                        <th> Conversions</th>
-                        <th> Revenue</th>
-                    </tr>
-                </thead>
+            <div style={{ width: "100%", height: "290px" }}>
+                <canvas ref={chartRef} />
 
-                <tbody>
-                    {
-                        data.map((d) => {
 
-                            return (
-                                <tr>
-                                    <td>{d.Group}</td>
-                                    <td>{d.Clicks}</td>
-                                    <td>USD- {d.Cost}</td>
-                                    <td>{d.Conversions}</td>
-                                    <td>{d.Revenue}</td>
-                                </tr>
-                            )
-                        })
-                    }
-                </tbody>
-            </Table>
+            </div>
+
+
+
         </Fragment>
     )
 };
